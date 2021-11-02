@@ -20,14 +20,14 @@ namespace Avalonia.ReactiveProgressBar.ViewModels
 
         public MainWindowViewModel()
         {
-            this.SubscribeCollection()
+            this.ObservabeItemCollection()
                 .Subscribe(x => 
                 {
                     this.Progress = (x.Index * 100) / MaxCout;
                 });
         }
 
-        private IObservable<Item> SubscribeCollection()
+        private IObservable<Item> ObservabeItemCollection()
         {
             var scheduleInstance = ThreadPoolScheduler.Instance;
 
